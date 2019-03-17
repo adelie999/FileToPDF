@@ -1,0 +1,5 @@
+<dependency>
+    <groupId>com.github.livesense</groupId>
+    <artifactId>jodconverter-core</artifactId>
+    <version>1.0.5</version>
+</dependency>
