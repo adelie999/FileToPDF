@@ -20,14 +20,14 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		// 変換前ファイル
-		Path excelFile = Paths.get("***");
+		Path beforeFile = Paths.get("***");
 		// 変換後ファイル
-		String fileName = excelFile.getFileName().toString();
+		String fileName = beforeFile.getFileName().toString();
 		String pdfName = fileName.substring(0, fileName.lastIndexOf(".")) + ".pdf";
-		Path pdfFile = excelFile.getParent().resolve(Paths.get(pdfName));
+		Path pdfFile = beforeFile.getParent().resolve(Paths.get(pdfName));
 
 		// 変換
-		convert(excelFile, pdfFile);
+		convert(beforeFile, pdfFile);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class App {
 	 * @param excelFile
 	 * @param pdfFile
 	 */
-	private static void convert(Path excelFile, Path pdfFile) {
+	private static void convert(Path beforeFile, Path pdfFile) {
 		// officeのパス
 		final String OFFICE_HOME = "***";
 		// officeのポート
@@ -52,7 +52,7 @@ public class App {
 
 	    // ストップ
 	    OfficeDocumentConverter converter = new OfficeDocumentConverter(manager);
-	    converter.convert(excelFile.toFile(), pdfFile.toFile());
+	    converter.convert(beforeFile.toFile(), pdfFile.toFile());
 	    manager.stop();
 	}
 
