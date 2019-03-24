@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BasicController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu id="file" mnemonicParsing="false" text="ファイル">
+          <items>
+            <MenuItem id="open" fx:id="open" mnemonicParsing="false" onAction="#handleOpen" text="ファイルを開く" />
+            <MenuItem id="close" fx:id="exit" mnemonicParsing="false" onAction="#handleExit" text="終了する" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="ヘルプ">
+          <items>
+            <MenuItem id="help" mnemonicParsing="false" text="FileToPDFについて" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="panel" maxHeight="-1.0" maxWidth="-1.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" prefHeight="262.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="175.0" text="ファイルを開く、またはファイルをドラッグしてください" textFill="#9a9696">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="59.0" layoutY="52.0" prefHeight="0.0" prefWidth="552.0" />
+            <Separator layoutX="56.0" layoutY="52.0" orientation="VERTICAL" prefHeight="282.0" prefWidth="0.0" />
+            <Separator layoutX="56.0" layoutY="333.0" prefHeight="3.0" prefWidth="552.0" />
+            <Separator layoutX="605.0" layoutY="52.0" orientation="VERTICAL" prefHeight="282.0" prefWidth="0.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
